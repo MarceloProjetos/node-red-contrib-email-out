@@ -56,7 +56,7 @@
     <div class="form-tips" id="node-tip"><span data-i18n="[html]email.tip.cred"></span></div>
 </script>
 
-<script type="text/x-red" data-help-name="e-mail">
+<script type="text/x-red" data-help-name="e-mail out">
     <p>Sends the <code>msg.payload</code> as an email, with a subject of <code>msg.topic</code>.</p>
     <p>The default message recipient can be configured in the node, if it is left
     blank it should be set using the <code>msg.to</code> property of the incoming message. If left blank
@@ -90,7 +90,7 @@
             global: { type:"boolean"}
         },
         inputs:1,
-        outputs:0,
+        outputs:1,
         icon: "envelope.png",
         align: "right",
         label: function() {
