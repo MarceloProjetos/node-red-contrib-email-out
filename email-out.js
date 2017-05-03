@@ -81,7 +81,9 @@ module.exports = function(RED) {
                     }
                     sendopts.subject = msg.topic || msg.title || "Message from Node-RED"; // subject line
                     if (msg.hasOwnProperty("envelope")) { sendopts.envelope = msg.envelope; }
-                    if (Buffer.isBuffer(msg.payload)) { // if it's a buffer in the payload then auto create an attachment instead
+                    
+                    // preserve payload
+                    /*if (Buffer.isBuffer(msg.payload)) { // if it's a buffer in the payload then auto create an attachment instead
                         if (!msg.filename) {
                             var fe = "bin";
                             if ((msg.payload[0] === 0xFF)&&(msg.payload[1] === 0xD8)) { fe = "jpg"; }
@@ -97,13 +99,13 @@ module.exports = function(RED) {
                         }
                         // Create some body text..
                         sendopts.text = RED._("email.default-message",{filename:fname, description:(msg.description||"")});
-                    }
-                    else {
-                        var payload = RED.util.ensureString(msg.payload);
-                        sendopts.text = payload; // plaintext body
-                        if (/<[a-z][\s\S]*>/i.test(payload)) { sendopts.html = payload; } // html body
-                        if (msg.attachments) { sendopts.attachments = msg.attachments; } // add attachments
-                    }
+                    }*/
+
+                    var text = RED.util.ensureString(msg.body || msg.text);
+                    sendopts.text = text; // plaintext body
+                    if (/<[a-z][\s\S]*>/i.test(msg.body || msg.html)) { sendopts.html = (msg.body || msg.html); } // html body
+                    if (msg.attachments) { sendopts.attachments = msg.attachments; } // add attachments
+
                     smtpTransport.sendMail(sendopts, function(error, info) {
                         if (error) {
                             node.error(error,msg);
