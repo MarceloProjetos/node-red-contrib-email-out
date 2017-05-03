@@ -1,9 +1,8 @@
 # node-red-contrib-email-out
-============================
 
 [![NPM](https://nodei.co/npm/node-red-contrib-email-out.png)](https://nodei.co/npm/node-red-contrib-email-out/)
 
-[Node-Red][1] node contrib node to send emails with output [nodemailer][2].
+[Node-Red][1] node contrib node to send emails with output using [nodemailer][2].
 
 This node is based on [node-red-nodes-email][5] and [lambda-mailer][4] 
 
