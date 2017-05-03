@@ -18,8 +18,9 @@ Property | Method | Example
 to | msg.to | [ { "address": "receiver@example.com", "name": "Receiver" } ]
 from | msg.from | [ { "address": "sender@example.com", "name": "Sender" } ]
 subject | msg.subject | Hello world!
-body (html) | msg.html | <code><html><body>How are you today?</body></html></code>
-body (text) | msg.text | How are you today?
+text+html | msg.body | How are you today?
+html | msg.html | <code><html><body>How are you today?</body></html></code>
+text | msg.text | How are you today?
 attachments | msg.attachments[] | *** see attachments object properties ***
 number of attachments | msg.attachments.length | 4
 
@@ -34,6 +35,7 @@ number of attachments | msg.attachments.length | 4
   * **references** - an array of reference message id values (not set if no reference values present)
   * **inReplyTo** - an array of In-Reply-To message id values (not set if no in-reply-to values present)
   * **priority** - priority of the e-mail, always one of the following: *normal* (default), *high*, *low*
+  * **body** - if provided, override text and html fields
   * **text** - text body
   * **html** - html body
   * **date** - date field as a `Date()` object. If date could not be resolved or is not found this field is not set. Check the original date string from `headers.date`
@@ -56,6 +58,10 @@ attachments = [{
 #Nodes
 ![alt tag](https://raw.githubusercontent.com/alessh/node-red-contrib-email-out/master/node.png)
 ![alt tag](https://raw.githubusercontent.com/alessh/node-red-contrib-email-out/master/flow.png)
+
+### TODO
+
+- add templates from lambda-mailer
 
 #Author
 

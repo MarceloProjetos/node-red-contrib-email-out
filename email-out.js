@@ -81,8 +81,8 @@ module.exports = function(RED) {
                     }
                     sendopts.subject = msg.topic || msg.title || "Message from Node-RED"; // subject line
                     if (msg.hasOwnProperty("envelope")) { sendopts.envelope = msg.envelope; }
-                    
-                    // preserve payload
+
+                    // send attachments as array of msg.attachments
                     /*if (Buffer.isBuffer(msg.payload)) { // if it's a buffer in the payload then auto create an attachment instead
                         if (!msg.filename) {
                             var fe = "bin";
