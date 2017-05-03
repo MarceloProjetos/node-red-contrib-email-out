@@ -1,0 +1,36 @@
+{
+  "name": "node-red-contrib-email-out",
+  "version": "0.0.1",
+  "description": "Node-RED contrib nodes to send simple emails with output",
+  "main": "email-out.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "nodemailer": "^1.11.0",
+    "poplib": "^0.1.7",
+    "mailparser": "^0.6.1",
+    "imap": "^0.8.19"
+  },
+  "node-red": {
+    "nodes": {
+      "email": "email-out.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alessh/node-red-contrib-email-out.git"
+  },
+  "keywords": [
+    "node-red",
+    "email",
+    "gmail",
+    "imap"
+  ],
+  "author": "Alessandro Holanda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alessh/node-red-contrib-email-out/issues"
+  },
+  "homepage": "https://github.com/alessh/node-red-contrib-email-out#readme"
+}
