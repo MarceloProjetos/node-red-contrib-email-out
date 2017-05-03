@@ -1,7 +1,7 @@
 # node-red-contrib-email-out
 ============================
 
-[![NPM](https://nodei.co/npm/node-red-contrib-email-out.png)](https://nodei.co/npm/node-red-contrib-mail-parse/)
+[![NPM](https://nodei.co/npm/node-red-contrib-email-out.png)](https://nodei.co/npm/node-red-contrib-email-out/)
 
 [Node-Red][1] node contrib node to send emails with output [nodemailer][2].
 
